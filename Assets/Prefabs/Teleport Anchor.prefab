@@ -9,8 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8972245371934104818}
+  - component: {fileID: 7552125736396301209}
   - component: {fileID: 6540623357039495187}
-  m_Layer: 0
+  - component: {fileID: 3692565278770825627}
+  m_Layer: 6
   m_Name: Teleport Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +37,29 @@ Transform:
   - {fileID: 8286717786611171123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7552125736396301209
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267334552151902401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.8804405
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9402183, z: 0}
 --- !u!114 &6540623357039495187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,7 +73,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 7552125736396301209}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2147483648
@@ -73,10 +99,34 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3692565278770825627}
+        m_TargetAssemblyTypeName: TeleportAnchorVisuals, Assembly-CSharp
+        m_MethodName: ActivateVisuals
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_HoverExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3692565278770825627}
+        m_TargetAssemblyTypeName: TeleportAnchorVisuals, Assembly-CSharp
+        m_MethodName: DeactivateVisuals
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -147,6 +197,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_TeleportAnchorTransform: {fileID: 5149217128782286751}
+--- !u!114 &3692565278770825627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267334552151902401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8ab6889c683944c876b8d031e9c429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visuals: {fileID: 2471461395582753580}
 --- !u!1 &2471461395582753580
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +222,7 @@ GameObject:
   - component: {fileID: 5295079906671628646}
   - component: {fileID: 3433449840522823056}
   - component: {fileID: 4911557844895007124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Activate Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +329,7 @@ GameObject:
   - component: {fileID: 8162137147391031565}
   - component: {fileID: 967514609957174094}
   - component: {fileID: 4397067156454983860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5149217128782286751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

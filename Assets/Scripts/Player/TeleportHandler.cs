@@ -13,6 +13,8 @@ public class TeleportHandler : MonoBehaviour
 
     private void Update()
     {
+        // Read left hand analog input.
+        // If tilting forward activate teleport ray, otherwise deactivate it.
         Vector2 analogValue = activateTeleportRay.action.ReadValue<Vector2>();
         if (analogValue.y > 0 && !teleportRay.activeInHierarchy)
         {

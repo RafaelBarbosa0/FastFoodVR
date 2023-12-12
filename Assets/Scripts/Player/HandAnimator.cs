@@ -19,6 +19,8 @@ public class HandAnimator : MonoBehaviour
 
     private void Update()
     {
+        // Hand animations.
+        // Close hand when pressing grip button, open when releasing it.
         gripValue = leftGripAnimationAction.action.ReadValue<float>();
         leftHandAnimator.SetFloat("Grip", gripValue);
 
