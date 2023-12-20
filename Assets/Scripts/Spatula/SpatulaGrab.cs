@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class SpatulaGrab : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private Transform spawnPoint;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        // When spatula head touches burger flop it on top of spatula.
+        if(other.tag == "Burger")
+        {
+            Transform burger = other.transform;
+
+            burger.position = spawnPoint.position;
+        }
     }
 }

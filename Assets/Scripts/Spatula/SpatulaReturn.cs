@@ -17,11 +17,13 @@ public class SpatulaReturn : MonoBehaviour
 
     public void PickUpSpatula()
     {
+        // Rigidbody is not kinematic when player is interacting with it.
         rb.isKinematic = false;
     }
 
     public void ReturnSpatula()
     {
+        // When player drops spatula, make rigidbody kinematic and return it to its default position.
         rb.isKinematic = true;
 
         transform.localPosition = returnPoint.localPosition;

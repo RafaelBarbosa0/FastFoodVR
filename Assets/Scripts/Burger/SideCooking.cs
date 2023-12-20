@@ -6,11 +6,18 @@ public class SideCooking : MonoBehaviour
 {
     private bool isCooking;// Is this burger side currently being cooked.
 
-    [SerializeField]
     private float cookAmount;// how cooked is this side, from 0 to 1 for lerping.
 
     [SerializeField]
     private float cookSpeed;
+
+    [SerializeField]
+    private GameObject model;
+    private Material mat;
+
+    private Color startingColor;
+    [SerializeField]
+    private Color endColor;
 
     public bool IsCooking { get => isCooking; set => isCooking = value; }
     public float CookAmount
@@ -25,11 +32,22 @@ public class SideCooking : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Material startingMat = model.GetComponent<MeshRenderer>().material;
+        mat = Instantiate(startingMat);
+        model.GetComponent<MeshRenderer>().material = mat;
+
+        startingColor = mat.color;
+    }
+
     private void Update()
     {
         if (isCooking)
         {
             CookAmount += cookSpeed * Time.deltaTime;
+
+            mat.color = Color.Lerp(startingColor, endColor, cookAmount);
         }
     }
 

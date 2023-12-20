@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 1909341234851109399}
   - component: {fileID: 3604589891517457688}
   - component: {fileID: 2292865139026001570}
-  - component: {fileID: 8679022578694699990}
+  - component: {fileID: 2971568997476022306}
+  - component: {fileID: 7062373251065819087}
   m_Layer: 0
   m_Name: Burger
-  m_TagString: Untagged
+  m_TagString: Burger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +85,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8679022578694699990
+--- !u!114 &2971568997476022306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 54664840699329456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 13bc3444a90feea41a41261472f27238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -135,10 +136,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7062373251065819087}
+        m_TargetAssemblyTypeName: GrabStatus, Assembly-CSharp
+        m_MethodName: StartGrabbing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7062373251065819087}
+        m_TargetAssemblyTypeName: GrabStatus, Assembly-CSharp
+        m_MethodName: StopGrabbing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -237,6 +262,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  top: {fileID: 4144339837244599544}
+  bottom: {fileID: 5676708790388198490}
+--- !u!114 &7062373251065819087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54664840699329456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cd4f6fb2c9a6b40913d498ea986e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2611806290599453809
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +287,6 @@ GameObject:
   - component: {fileID: 4154629679844975021}
   - component: {fileID: 6045686121831779678}
   - component: {fileID: 7725801862048117278}
-  - component: {fileID: 3447445058435072410}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -321,27 +359,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3447445058435072410
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2611806290599453809}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3579656249650869279
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +403,6 @@ GameObject:
   - component: {fileID: 8671643504145975511}
   - component: {fileID: 2197025856282812674}
   - component: {fileID: 8712796630174685925}
-  - component: {fileID: 1764133812427000231}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -459,27 +475,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1764133812427000231
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3973958194344217952}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6553991675476985524
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +521,7 @@ GameObject:
   - component: {fileID: 5676708790388198490}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Burger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,7 +560,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.21014951, z: 1}
+  m_Size: {x: 1.0644696, y: 0.21014951, z: 1.0629964}
   m_Center: {x: 0, y: 0.5049577, z: 0}
 --- !u!114 &5676708790388198490
 MonoBehaviour:
@@ -579,7 +574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3178ddf8eab1d248820d33f596a6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookSpeed: 0.05
+  cookSpeed: 0.08
+  model: {fileID: 2611806290599453809}
+  endColor: {r: 0.122641504, g: 0.069275096, b: 0.05148629, a: 0}
 --- !u!1 &7071311433538429434
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +590,7 @@ GameObject:
   - component: {fileID: 4144339837244599544}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Burger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -632,7 +629,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.21014951, z: 1}
+  m_Size: {x: 1.0571092, y: 0.21014951, z: 1.0416311}
   m_Center: {x: 0, y: 0.5049577, z: 0}
 --- !u!114 &4144339837244599544
 MonoBehaviour:
@@ -646,4 +643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3178ddf8eab1d248820d33f596a6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookSpeed: 0.05
+  cookSpeed: 0.08
+  model: {fileID: 3973958194344217952}
+  endColor: {r: 0.122641504, g: 0.069275096, b: 0.05148629, a: 0}
