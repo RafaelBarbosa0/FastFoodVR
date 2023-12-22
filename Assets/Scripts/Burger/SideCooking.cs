@@ -19,6 +19,9 @@ public class SideCooking : MonoBehaviour
     [SerializeField]
     private Color endColor;
 
+    [SerializeField]
+    private GameObject cookStatus;
+
     public bool IsCooking { get => isCooking; set => isCooking = value; }
     public float CookAmount
     {
@@ -56,6 +59,9 @@ public class SideCooking : MonoBehaviour
         if(other.tag == "Grill")
         {
             isCooking = true;
+
+            cookStatus.SetActive(true);
+            cookStatus.GetComponent<CookStatus>().StartChecking();
         }
     }
 
@@ -64,6 +70,9 @@ public class SideCooking : MonoBehaviour
         if(other.tag == "Grill")
         {
             isCooking = false;
+
+            cookStatus.GetComponent<CookStatus>().StopChecking();
+            cookStatus.SetActive(false);
         }
     }
 }

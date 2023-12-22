@@ -10,7 +10,7 @@ public class SpatulaGrab : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // When spatula head touches burger flop it on top of spatula.
-        if(other.tag == "Burger")
+        if(other.tag == "Patty")
         {
             Transform burger = other.transform;
 
