@@ -15,7 +15,7 @@ public class TransportObject : MonoBehaviour
     {
         if(other.tag == objectTag)
         {
-            GrabStatus grabStatus = other.GetComponent<GrabStatus>();
+            BurgerStatus grabStatus = other.GetComponent<BurgerStatus>();
             if (grabStatus.IsGrabbing) return;
 
             Rigidbody rb = other.GetComponent<Rigidbody>();

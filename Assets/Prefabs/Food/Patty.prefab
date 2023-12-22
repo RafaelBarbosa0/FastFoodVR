@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1909341234851109399}
   - component: {fileID: 2292865139026001570}
+  - component: {fileID: 3877305952535180900}
   - component: {fileID: 2971568997476022306}
   - component: {fileID: 7062373251065819087}
-  - component: {fileID: 3877305952535180900}
   m_Layer: 0
   m_Name: Patty
   m_TagString: Patty
@@ -66,6 +66,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3877305952535180900
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54664840699329456}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.72684574, z: 1}
+  m_Center: {x: 0, y: 0.1365777, z: 0}
 --- !u!114 &2971568997476022306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,27 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cd4f6fb2c9a6b40913d498ea986e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &3877305952535180900
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54664840699329456}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.72684574, z: 1}
-  m_Center: {x: 0, y: 0.1365777, z: 0}
+  top: {fileID: 4144339837244599544}
+  bottom: {fileID: 5676708790388198490}
 --- !u!1 &504713638576835384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1200,8 @@ MonoBehaviour:
   model: {fileID: 2611806290599453809}
   endColor: {r: 0.122641504, g: 0.069275096, b: 0.05148629, a: 0}
   cookStatus: {fileID: 5512095735234993165}
+  minCook: 0.372
+  maxCook: 0.623
 --- !u!1 &7071311433538429434
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1272,8 @@ MonoBehaviour:
   model: {fileID: 3973958194344217952}
   endColor: {r: 0.122641504, g: 0.069275096, b: 0.05148629, a: 0}
   cookStatus: {fileID: 7220357985053483439}
+  minCook: 0.372
+  maxCook: 0.623
 --- !u!1 &7220357985053483439
 GameObject:
   m_ObjectHideFlags: 0

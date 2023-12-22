@@ -22,6 +22,13 @@ public class SideCooking : MonoBehaviour
     [SerializeField]
     private GameObject cookStatus;
 
+    [SerializeField]
+    private float minCook;
+    [SerializeField]
+    private float maxCook;
+
+    public bool IsCooked => cookAmount >= minCook && cookAmount <= maxCook;
+
     public bool IsCooking { get => isCooking; set => isCooking = value; }
     public float CookAmount
     {
