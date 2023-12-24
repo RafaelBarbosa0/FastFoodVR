@@ -9,21 +9,28 @@ public class CookStatus : MonoBehaviour
     private Image progressCircle;
 
     [SerializeField]
-    private SideCooking side;
+    private SideCooking side;// Get cook state change values.
 
-    [SerializeField]
-    private float yellowTreshold;
-    [SerializeField]
-    private float greenTreshold;
+    private float yellowTreshold;// When bar changes to green.
+    private float greenTreshold;// When bar changes to red.
 
-    private bool isChecking;
+    private bool isActive;// If progress circle should be displayed.
+
+    private void Start()
+    {
+        yellowTreshold = side.MinCook;
+        greenTreshold = side.MaxCook;
+    }
 
     private void Update()
     {
-        if(isChecking)
+        if(isActive)
         {
+            // Set image fill.
             progressCircle.fillAmount = side.CookAmount;
 
+            // Set color of bar to give feedback on burger cooking.
+            // Yellow means not ready, green means cooked and red mean overcooked.
             if (side.CookAmount < yellowTreshold) progressCircle.color = Color.yellow;
             else if(side.CookAmount >= yellowTreshold && side.CookAmount < greenTreshold) progressCircle.color = Color.green;
             else progressCircle.color = Color.red;
@@ -32,11 +39,11 @@ public class CookStatus : MonoBehaviour
 
     public void StartChecking()
     {
-        isChecking = true;
+        isActive = true;
     }
 
     public void StopChecking()
     {
-        isChecking = false;
+        isActive = false;
     }
 }

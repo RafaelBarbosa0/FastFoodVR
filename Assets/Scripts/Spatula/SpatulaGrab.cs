@@ -12,6 +12,9 @@ public class SpatulaGrab : MonoBehaviour
         // When spatula head touches burger flop it on top of spatula.
         if(other.tag == "Patty")
         {
+            // Return if player is grabbing patty.
+            if (other.GetComponent<PattyStatus>().IsGrabbing) return;
+
             Transform burger = other.transform;
 
             burger.position = spawnPoint.position;

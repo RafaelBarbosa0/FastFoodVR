@@ -12,29 +12,37 @@ public class SideCooking : MonoBehaviour
     private float cookSpeed;
 
     [SerializeField]
-    private GameObject model;
-    private Material mat;
-
-    private Color startingColor;
+    private float minCook;// Value when burger enters cooked state.
     [SerializeField]
-    private Color endColor;
+    private float maxCook;// Value when burger enters overcooked state.
 
     [SerializeField]
-    private GameObject cookStatus;
+    private GameObject cookStatus;// Interact with cooking progress circle.
 
     [SerializeField]
-    private float minCook;
+    private MeshRenderer sideMat;// Reference to material for this side of burger.
     [SerializeField]
-    private float maxCook;
+    private int matIndex;
+    [SerializeField]
+    private Material undercooked;
+    [SerializeField]
+    private Material cooked;
+    [SerializeField]
+    private Material burnt;
+
+    public bool IsCooking { get => isCooking; set => isCooking = value; }
+
+    public float MinCook { get => minCook; private set => minCook = value; }
+
+    public float MaxCook { get => maxCook; private set => maxCook = value; }
 
     public bool IsCooked => cookAmount >= minCook && cookAmount <= maxCook;
 
-    public bool IsCooking { get => isCooking; set => isCooking = value; }
     public float CookAmount
     {
         get => cookAmount;
 
-        set
+        private set
         {
             if(cookAmount < 0) cookAmount = 0;
             else if (cookAmount > 1) cookAmount = 1;
@@ -44,29 +52,37 @@ public class SideCooking : MonoBehaviour
 
     private void Start()
     {
-        Material startingMat = model.GetComponent<MeshRenderer>().material;
-        mat = Instantiate(startingMat);
-        model.GetComponent<MeshRenderer>().material = mat;
-
-        startingColor = mat.color;
+        ChangeMat(undercooked);
     }
 
     private void Update()
     {
-        if (isCooking)
+        if (isCooking)// Cook patty.
         {
             CookAmount += cookSpeed * Time.deltaTime;
 
-            mat.color = Color.Lerp(startingColor, endColor, cookAmount);
+            if (cookAmount > minCook && cookAmount < maxCook && sideMat.materials[matIndex] != cooked) ChangeMat(cooked);
+            else if (cookAmount > maxCook && sideMat.materials[matIndex] != burnt) ChangeMat(burnt);
         }
+    }
+
+    private void ChangeMat(Material newMat)
+    {
+        Material[] mats = sideMat.materials;
+
+        mats[matIndex] = newMat;
+
+        sideMat.materials = mats;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Grill")
+        if(other.tag == "Grill")// When entering grill.
         {
+            // Start cooking.
             isCooking = true;
 
+            // Start progress circle.
             cookStatus.SetActive(true);
             cookStatus.GetComponent<CookStatus>().StartChecking();
         }
@@ -74,10 +90,12 @@ public class SideCooking : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Grill")
+        if(other.tag == "Grill")// When leaving grill.
         {
+            // Stop cooking.
             isCooking = false;
 
+            // Stop progress circle.
             cookStatus.GetComponent<CookStatus>().StopChecking();
             cookStatus.SetActive(false);
         }

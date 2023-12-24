@@ -22,8 +22,7 @@ public class Burger : MonoBehaviour
         // Add patty.
         if(other.tag == "Patty")
         {
-            Debug.Log("patty");
-            BurgerStatus patty = other.GetComponent<BurgerStatus>();
+            PattyStatus patty = other.GetComponent<PattyStatus>();
 
             if (patty.Cooked) pattyAmount++;
         }
@@ -59,7 +58,7 @@ public class Burger : MonoBehaviour
         // Remove patty.
         if(other.tag == "Patty")
         {
-            BurgerStatus patty = other.GetComponent<BurgerStatus>();
+            PattyStatus patty = other.GetComponent<PattyStatus>();
 
             if (patty.Cooked) pattyAmount--;
         }
