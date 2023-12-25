@@ -31,6 +31,6 @@ public class ObjectReturn : MonoBehaviour
         rb.isKinematic = true;
 
         transform.position = returnPoint.position;
-        transform.localRotation = rotation;
+        transform.rotation = rotation;
     }
 }

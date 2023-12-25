@@ -12,6 +12,11 @@ TagManager:
   - FryBasket
   - Oil
   - FryBag
+  - FryReserve
+  - ReservedFries
+  - Scoop
+  - FryBox
+  - FrySlot
   layers:
   - Default
   - TransparentFX

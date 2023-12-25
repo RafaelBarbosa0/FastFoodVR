@@ -17,6 +17,13 @@ public class Burger : MonoBehaviour
     [SerializeField]
     private int ingredientFiveAmount;
 
+    public int PattyAmount { get => pattyAmount; private set => pattyAmount = value; }
+    public int IngredientOneAmount { get => ingredientOneAmount; private set => ingredientOneAmount = value; }
+    public int IngredientTwoAmount { get => ingredientTwoAmount; private set => ingredientTwoAmount = value; }
+    public int IngredientThreeAmount { get => ingredientThreeAmount; private set => ingredientThreeAmount = value; }
+    public int IngredientFourAmount { get => ingredientFourAmount; private set => ingredientFourAmount = value; }
+    public int IngredientFiveAmount { get => ingredientFiveAmount; private set => ingredientFiveAmount = value; }
+
     private void OnTriggerEnter(Collider other)
     {
         // Add patty.

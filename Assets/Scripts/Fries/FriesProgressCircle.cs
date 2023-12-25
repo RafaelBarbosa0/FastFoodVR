@@ -17,6 +17,8 @@ public class FriesProgressCircle : MonoBehaviour
 
     private bool isChecking;
 
+    public Image ProgressCircle { get => progressCircle; set => progressCircle = value; }
+
     private void Start()
     {
         frying = GetComponent<Frying>();

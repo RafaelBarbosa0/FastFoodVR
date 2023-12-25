@@ -5,9 +5,14 @@ using UnityEngine;
 public class Frying : MonoBehaviour
 {
     [SerializeField]
-    private BasketStatus status;
+    private BasketStatus status;// To check if basket is in oil.
 
-    private bool hasFries;
+    [SerializeField]
+    private GameObject reservedFries;// To move cooked fries to reserve.
+
+    private FriesProgressCircle circle;
+
+    private bool hasFries;// Are there fries in the basket.
 
     private bool isFrying => status.InOil && hasFries;
 
@@ -44,9 +49,13 @@ public class Frying : MonoBehaviour
         }
     }
 
+    public bool HasFries { get => hasFries; private set => hasFries = value; }
+
     private void Start()
     {
         fryRenderer = fries.GetComponent<MeshRenderer>();
+
+        circle = GetComponent<FriesProgressCircle>();
     }
 
     private void Update()
@@ -68,11 +77,14 @@ public class Frying : MonoBehaviour
         fries.gameObject.SetActive(true);
 
         ChangeFryMat(uncooked);
+
+        circle.ProgressCircle.color = Color.yellow;
     }
 
     public void RemoveFries()
     {
         hasFries = false;
+        fryStatus = 0;
         fries.gameObject.SetActive(false);
     }
 
@@ -90,9 +102,14 @@ public class Frying : MonoBehaviour
 
         else if (other.tag == "FryReserve" && isCooked)
         {
+            if(!reservedFries.activeInHierarchy) reservedFries.SetActive(true);
+            FryReserve reserve = reservedFries.GetComponent<FryReserve>();
+
+            if (reserve.IsFull) return;
+
             RemoveFries();
 
-            // Code to fill reserve.
+            reserve.SetScoops();
         }
     }
 }
