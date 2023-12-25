@@ -11,6 +11,7 @@ TagManager:
   - Ingredient
   - FryBasket
   - Oil
+  - FryBag
   layers:
   - Default
   - TransparentFX

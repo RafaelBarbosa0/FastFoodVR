@@ -44,8 +44,8 @@ public class SideCooking : MonoBehaviour
 
         private set
         {
-            if(cookAmount < 0) cookAmount = 0;
-            else if (cookAmount > 1) cookAmount = 1;
+            if(value < 0) cookAmount = 0;
+            else if (value > 1) cookAmount = 1;
             else cookAmount = value;
         }
     }
