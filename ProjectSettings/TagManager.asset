@@ -17,6 +17,7 @@ TagManager:
   - Scoop
   - FryBox
   - FrySlot
+  - MachineSlot
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Anchor
   - BasketBlock
   - Basket
-  - 
+  - Drink
   - 
   - 
   - 
