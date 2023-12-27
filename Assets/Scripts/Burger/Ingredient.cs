@@ -6,11 +6,11 @@ public class Ingredient : MonoBehaviour
 {
     public enum IngredientType
     {
-        IngredientOne,
-        IngredientTwo,
-        IngredientThree,
-        IngredientFour,
-        IngredientFive
+        LETTUCE,
+        CHEESE,
+        COWTONGUE,
+        GREENBRISTOL,
+        PURPLEBRISTOL
     }
 
     [SerializeField]

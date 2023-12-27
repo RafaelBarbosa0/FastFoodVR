@@ -28,7 +28,7 @@ public class FryBoxGrab : XRGrabInteractable
     {
         base.OnSelectExited(args);
 
-        if (slot != null)
+        if (slot != null && !slot.Slotted)
         {
             if (!rb.isKinematic) rb.isKinematic = true;
 

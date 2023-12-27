@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class FryBox : MonoBehaviour
 {
-    public enum FrySize
+    public enum FRYSIZE
     {
-        SMALL,
-        MEDIUM,
-        LARGE
+        Small,
+        Medium,
+        Large
     }
 
     [SerializeField]
-    private FrySize size;
+    private FRYSIZE size;
 
     [SerializeField]
     private int maxScoops;
@@ -23,7 +23,7 @@ public class FryBox : MonoBehaviour
 
     public bool Full => currentScoops == maxScoops;
 
-    public FrySize Size { get => size; set => size = value; }
+    public FRYSIZE Size { get => size; private set => size = value; }
 
     public void AddScoop()
     {

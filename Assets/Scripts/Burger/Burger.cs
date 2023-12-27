@@ -7,22 +7,22 @@ public class Burger : MonoBehaviour
     [SerializeField]
     private int pattyAmount;
     [SerializeField]
-    private int ingredientOneAmount;
+    private int lettuceAmount;
     [SerializeField]
-    private int ingredientTwoAmount;
+    private int cheeseAmount;
     [SerializeField]
-    private int ingredientThreeAmount;
+    private int cowTongueAmount;
     [SerializeField]
-    private int ingredientFourAmount;
+    private int greenBristolAmount;
     [SerializeField]
-    private int ingredientFiveAmount;
+    private int purpleBristolAmount;
 
     public int PattyAmount { get => pattyAmount; private set => pattyAmount = value; }
-    public int IngredientOneAmount { get => ingredientOneAmount; private set => ingredientOneAmount = value; }
-    public int IngredientTwoAmount { get => ingredientTwoAmount; private set => ingredientTwoAmount = value; }
-    public int IngredientThreeAmount { get => ingredientThreeAmount; private set => ingredientThreeAmount = value; }
-    public int IngredientFourAmount { get => ingredientFourAmount; private set => ingredientFourAmount = value; }
-    public int IngredientFiveAmount { get => ingredientFiveAmount; private set => ingredientFiveAmount = value; }
+    public int LettuceAmount { get => lettuceAmount; private set => lettuceAmount = value; }
+    public int CheeseAmount { get => cheeseAmount; private set => cheeseAmount = value; }
+    public int CowTongueAmount { get => cowTongueAmount; private set => cowTongueAmount = value; }
+    public int GreenBristolAmount { get => greenBristolAmount; private set => greenBristolAmount = value; }
+    public int PurpleBristolAmount { get => purpleBristolAmount; private set => purpleBristolAmount = value; }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,20 +41,20 @@ public class Burger : MonoBehaviour
 
             switch (ingredient.Type)
             {
-                case Ingredient.IngredientType.IngredientOne: 
-                    ingredientOneAmount++; 
+                case Ingredient.IngredientType.LETTUCE: 
+                    lettuceAmount++; 
                     break;
-                case Ingredient.IngredientType.IngredientTwo: 
-                    ingredientTwoAmount++; 
+                case Ingredient.IngredientType.CHEESE: 
+                    cheeseAmount++; 
                     break;
-                case Ingredient.IngredientType.IngredientThree: 
-                    ingredientThreeAmount++; 
+                case Ingredient.IngredientType.COWTONGUE: 
+                    cowTongueAmount++; 
                     break;
-                case Ingredient.IngredientType.IngredientFour:
-                    ingredientFourAmount++;
+                case Ingredient.IngredientType.GREENBRISTOL:
+                    greenBristolAmount++;
                     break;
-                case Ingredient.IngredientType.IngredientFive:
-                    ingredientFiveAmount++;
+                case Ingredient.IngredientType.PURPLEBRISTOL:
+                    purpleBristolAmount++;
                     break;
             }
         }
@@ -77,20 +77,20 @@ public class Burger : MonoBehaviour
 
             switch (ingredient.Type)
             {
-                case Ingredient.IngredientType.IngredientOne:
-                    ingredientOneAmount--;
+                case Ingredient.IngredientType.LETTUCE:
+                    lettuceAmount--;
                     break;
-                case Ingredient.IngredientType.IngredientTwo:
-                    ingredientTwoAmount--;
+                case Ingredient.IngredientType.CHEESE:
+                    cheeseAmount--;
                     break;
-                case Ingredient.IngredientType.IngredientThree:
-                    ingredientThreeAmount--;
+                case Ingredient.IngredientType.COWTONGUE:
+                    cowTongueAmount--;
                     break;
-                case Ingredient.IngredientType.IngredientFour:
-                    ingredientFourAmount--;
+                case Ingredient.IngredientType.GREENBRISTOL:
+                    greenBristolAmount--;
                     break;
-                case Ingredient.IngredientType.IngredientFive:
-                    ingredientFiveAmount--;
+                case Ingredient.IngredientType.PURPLEBRISTOL:
+                    purpleBristolAmount--;
                     break;
             }
         }

@@ -23,7 +23,10 @@ public class MachineSlot : MonoBehaviour
     [SerializeField]
     private Material onMat;
 
+    private bool slotted;// Is a drink slotted into this slot.
+
     public DRINKTYPE DrinkType { get => drinkType; private set => drinkType = value; }
+    public bool Slotted { get => slotted; set => slotted = value; }
 
     public void SetLightOn()
     {

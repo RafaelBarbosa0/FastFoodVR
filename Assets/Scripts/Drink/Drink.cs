@@ -7,9 +7,9 @@ public class Drink : MonoBehaviour
 {
     public enum DRINKSIZE
     {
-        SMALL,
-        MEDIUM,
-        LARGE
+        Small,
+        Medium,
+        Large
     }
 
     [SerializeField]
@@ -19,18 +19,18 @@ public class Drink : MonoBehaviour
     private MachineSlot.DRINKTYPE type;
 
     [SerializeField]
-    private float maxDrink;
+    private float maxDrink;// How much to fill until full.
     [SerializeField]
-    private float currentDrink;
+    private float currentDrink;// How much is currently filled.
 
     [SerializeField]
     private float fillSpeed;
-    private bool filling;
+    private bool filling;// Is the drink currently being filled.
 
-    private MachineSlot currentSlot;
+    private MachineSlot currentSlot;// The machine slot this drink is currently slotted to.
 
     [SerializeField]
-    private GameObject cap;
+    private GameObject cap;// Drink cap to put on after drink is filled.
 
     private DrinkGrab grab;
 
@@ -60,15 +60,23 @@ public class Drink : MonoBehaviour
     {
         if (filling)
         {
+            // Fill drink.
             CurrentDrink += fillSpeed * Time.deltaTime;
 
-            if (IsFull)
+            if (IsFull)// When drink has been filled.
             {
+                // No longer filling.
                 filling = false;
+
+                // Setup slot to be empty.
                 currentSlot.SetLightOff();
+                currentSlot.Slotted = false;
                 currentSlot = null;
 
+                // Put cap on drink.
                 cap.SetActive(true);
+
+                // Let player grab drink again once it's full.
                 grab.enabled = true;
             }
         }

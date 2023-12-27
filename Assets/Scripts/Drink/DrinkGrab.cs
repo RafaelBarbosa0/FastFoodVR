@@ -10,27 +10,60 @@ public class DrinkGrab : XRGrabInteractable
 
     private MachineSlot machineSlot;
 
+    private DrinkSlot drinkSlot;
+
     [SerializeField]
     private Rigidbody rb;
+
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        base.OnSelectEntered(args);
+
+        if (drinkSlot != null) drinkSlot.RemoveTrayDrink();
+    }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
 
-        if(machineSlot != null && !drink.IsFull)
+        if(machineSlot != null && !machineSlot.Slotted && !drink.IsFull)// Drop drink into machine slot.
         {
+            // Position drink in slot.
             Vector3 pos = machineSlot.transform.position;
             transform.position = pos;
             transform.rotation = Quaternion.identity;
 
+            // Setup machine slot.
             machineSlot.SetLightOn();
+            machineSlot.Slotted = true;
 
+            // Setup drink and start filling.
             drink.SetDrinkType(machineSlot.DrinkType);
             drink.SetCurrentSlot(machineSlot);
             drink.StartFilling();
 
-            this.enabled = false;
+            // Kinematic while slotted.
+            rb.isKinematic = true;
+
+            // Player can't grab drink while its filling.
+            enabled = false;
         }
+
+        else if(drinkSlot != null && !drinkSlot.Slotted)
+        {
+            // Position drink in slot.
+            Vector3 pos = drinkSlot.transform.position;
+            transform.position = pos;
+            transform.rotation = Quaternion.identity;
+
+            // Setup drink slot.
+            drinkSlot.SetTrayDrink(drink);
+
+            // Kinematic while slotted.
+            rb.isKinematic = true;
+        }
+
+        else if(rb.isKinematic) rb.isKinematic = false;// Not kinematic if not slotted anywhere.
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,6 +72,11 @@ public class DrinkGrab : XRGrabInteractable
         {
             machineSlot = other.GetComponent<MachineSlot>();
         }
+
+        else if(other.tag == "DrinkSlot")
+        {
+            drinkSlot = other.GetComponent<DrinkSlot>();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -46,6 +84,11 @@ public class DrinkGrab : XRGrabInteractable
         if(other.tag == "MachineSlot")
         {
             machineSlot = null;
+        }
+
+        else if(other.tag == "DrinkSlot")
+        {
+            drinkSlot = null;
         }
     }
 }

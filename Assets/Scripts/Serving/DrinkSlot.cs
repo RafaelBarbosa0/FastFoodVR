@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrySlot : MonoBehaviour
+public class DrinkSlot : MonoBehaviour
 {
     private Tray tray;
 
@@ -15,15 +15,15 @@ public class FrySlot : MonoBehaviour
         tray = transform.parent.GetComponent<Tray>();
     }
 
-    public void SetTrayFries(FryBox box)
+    public void SetTrayDrink(Drink drink)
     {
-        tray.FryBox = box;
+        tray.Drink = drink;
         slotted = true;
     }
 
-    public void RemoveTrayFries()
+    public void RemoveTrayDrink()
     {
-        tray.FryBox = null;
+        tray.Drink = null;
         slotted = false;
     }
 }
