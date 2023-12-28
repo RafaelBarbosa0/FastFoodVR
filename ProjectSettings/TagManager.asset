@@ -19,6 +19,8 @@ TagManager:
   - FrySlot
   - MachineSlot
   - DrinkSlot
+  - Drink
+  - Fries
   layers:
   - Default
   - TransparentFX

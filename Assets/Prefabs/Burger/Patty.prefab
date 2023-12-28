@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3178ddf8eab1d248820d33f596a6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookSpeed: 0.08
+  cookSpeed: 0.05
   minCook: 0.372
   maxCook: 0.623
   cookStatus: {fileID: 5512095735234993165}
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3178ddf8eab1d248820d33f596a6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookSpeed: 0.08
+  cookSpeed: 0.05
   minCook: 0.372
   maxCook: 0.623
   cookStatus: {fileID: 7220357985053483439}

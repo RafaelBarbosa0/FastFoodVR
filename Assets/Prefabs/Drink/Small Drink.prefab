@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 6430998644746152835}
   m_Layer: 0
   m_Name: Small Drink
-  m_TagString: Untagged
+  m_TagString: Drink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

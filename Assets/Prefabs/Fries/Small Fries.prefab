@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 9078607188511628646}
   m_Layer: 0
   m_Name: Small Fries
-  m_TagString: Untagged
+  m_TagString: Fries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +534,6 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  posAdjust: 0
 --- !u!114 &9078607188511628646
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -433,7 +433,7 @@ Transform:
   m_GameObject: {fileID: 3926034600726944522}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.023, y: 1.1778, z: 5.0771}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.47993812, y: 0.021421758, z: 0.29050997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -801,8 +801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pattyAmount: 0
-  ingredientOneAmount: 0
-  ingredientTwoAmount: 0
-  ingredientThreeAmount: 0
-  ingredientFourAmount: 0
-  ingredientFiveAmount: 0
+  lettuceAmount: 0
+  cheeseAmount: 0
+  cowTongueAmount: 0
+  greenBristolAmount: 0
+  purpleBristolAmount: 0
