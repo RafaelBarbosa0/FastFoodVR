@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,13 +49,24 @@ public class GameManager : MonoBehaviour
     private bool gameStarted;
     private bool gameEnded;
 
-    [Header("Start Game Stuff")]
+    [Header("Game Status Stuff")]
+    [SerializeField]
+    private Transform startPosition;
     [SerializeField]
     private GameObject anchors;
     [SerializeField]
     private GameObject startCanvas;
     [SerializeField]
     private GameObject uiRay;
+
+    [SerializeField]
+    private GameObject endCanvas;
+    [SerializeField]
+    private TMP_Text endScore;
+    [SerializeField]
+    private Transform endPosition;
+    [SerializeField]
+    private Transform playerPosition;
 
     public bool GameStarted { get => gameStarted; private set => gameStarted = value; }
 
@@ -191,12 +204,40 @@ public class GameManager : MonoBehaviour
         startCanvas.SetActive(false);
         uiRay.SetActive(false);
 
+        playerPosition.position = startPosition.position;
+
         // Set game as started.
         gameStarted = true;
     }
 
+    /// <summary>
+    /// Restarts the game.
+    /// </summary>
+    public void RestartGame()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        SceneManager.LoadScene(currentScene);
+    }
+
+    /// <summary>
+    /// Necessary steps for ending game.
+    /// </summary>
     private void EndGame()
     {
+        // Move player to end position.
+        playerPosition.position = endPosition.position;
+
+        // Enable and disable necessary elements.
+        anchors.SetActive(false);
+
+        endCanvas.SetActive(true);
+        uiRay.SetActive(true);
+
+        // Set score text.
+        endScore.text = "Score : " + score.ToString();
+
+        // Set game as ended.
         gameEnded = true;
     }
 }
