@@ -12,8 +12,12 @@ public class ContainerInteraction : XRGrabInteractable
     {
         base.OnSelectEntered(args);
 
+        // Make parent with container's position to spawn gameobject in container.
+        GameObject setParent = new GameObject();
+        setParent.transform.position = transform.position;
+
         // Spawn object.
-        GameObject obj = Instantiate(objectToSpawn);
+        GameObject obj = Instantiate(objectToSpawn, setParent.transform);
 
         // Get spawned object interactable.
         XRGrabInteractable interactable = obj.GetComponent<XRGrabInteractable>();

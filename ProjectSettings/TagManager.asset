@@ -21,6 +21,7 @@ TagManager:
   - DrinkSlot
   - Drink
   - Fries
+  - Ground
   layers:
   - Default
   - TransparentFX
