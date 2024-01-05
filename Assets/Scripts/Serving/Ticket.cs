@@ -109,5 +109,7 @@ public class Ticket : MonoBehaviour
         if (cowTongueAmount > 0) ingredientText.text += cowTongueAmount.ToString() + " Cow Tongue \n";
         if (greenBristolAmount > 0) ingredientText.text += greenBristolAmount.ToString() + " Green Bristol \n";
         if (purpleBristolAmount > 0) ingredientText.text += purpleBristolAmount.ToString() + " Purple Bristol \n";
+
+        ingredientText.text += "Top with bun";
     }
 }

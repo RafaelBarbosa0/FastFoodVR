@@ -10,7 +10,8 @@ public class Ingredient : MonoBehaviour
         CHEESE,
         COWTONGUE,
         GREENBRISTOL,
-        PURPLEBRISTOL
+        PURPLEBRISTOL,
+        BUN
     }
 
     [SerializeField]

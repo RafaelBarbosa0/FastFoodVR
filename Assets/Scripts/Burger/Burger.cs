@@ -16,6 +16,8 @@ public class Burger : MonoBehaviour
     private int greenBristolAmount;
     [SerializeField]
     private int purpleBristolAmount;
+    [SerializeField]
+    private int bunAmount;
 
     public int PattyAmount { get => pattyAmount; private set => pattyAmount = value; }
     public int LettuceAmount { get => lettuceAmount; private set => lettuceAmount = value; }
@@ -23,6 +25,7 @@ public class Burger : MonoBehaviour
     public int CowTongueAmount { get => cowTongueAmount; private set => cowTongueAmount = value; }
     public int GreenBristolAmount { get => greenBristolAmount; private set => greenBristolAmount = value; }
     public int PurpleBristolAmount { get => purpleBristolAmount; private set => purpleBristolAmount = value; }
+    public int BunAmount { get => bunAmount; private set => bunAmount = value; }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -55,6 +58,9 @@ public class Burger : MonoBehaviour
                     break;
                 case Ingredient.IngredientType.PURPLEBRISTOL:
                     purpleBristolAmount++;
+                    break;
+                case Ingredient.IngredientType.BUN:
+                    bunAmount++;
                     break;
             }
         }
@@ -91,6 +97,9 @@ public class Burger : MonoBehaviour
                     break;
                 case Ingredient.IngredientType.PURPLEBRISTOL:
                     purpleBristolAmount--;
+                    break;
+                case Ingredient.IngredientType.BUN:
+                    bunAmount--;
                     break;
             }
         }
