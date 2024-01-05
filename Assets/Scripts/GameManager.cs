@@ -91,6 +91,8 @@ public class GameManager : MonoBehaviour
         {
             RemoveLife();
             StartNewOrder();
+
+            AudioManager.Instance.PlaySFX("Wrong", true);
         }
     }
 
@@ -117,11 +119,15 @@ public class GameManager : MonoBehaviour
         if (IsOrderCorrect())
         {
             UpdateScore();
+
+            AudioManager.Instance.PlaySFX("Correct", true);
         }
 
         else
         {
             RemoveLife();
+
+            AudioManager.Instance.PlaySFX("Wrong", true);
         }
 
         StartNewOrder();
@@ -206,6 +212,9 @@ public class GameManager : MonoBehaviour
 
         playerPosition.position = startPosition.position;
 
+        // Start music.
+        AudioManager.Instance.PlayMusic("MainTheme");
+
         // Set game as started.
         gameStarted = true;
     }
@@ -236,6 +245,9 @@ public class GameManager : MonoBehaviour
 
         // Set score text.
         endScore.text = "Score : " + score.ToString();
+
+        // Stop music.
+        AudioManager.Instance.StopMusic();
 
         // Set game as ended.
         gameEnded = true;

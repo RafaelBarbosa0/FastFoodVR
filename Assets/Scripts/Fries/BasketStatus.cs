@@ -14,7 +14,14 @@ public class BasketStatus : MonoBehaviour
 
     private bool inOil;
 
+    private AudioSource source;
+
     public bool InOil { get; private set; }
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +33,8 @@ public class BasketStatus : MonoBehaviour
             // Set progress circle.
             circleObj.SetActive(true);
             circle.StartChecking();
+
+            if(!source.isPlaying) source.Play();
         }
     }
 
@@ -38,6 +47,8 @@ public class BasketStatus : MonoBehaviour
 
             // Remove progress circle.
             circle.StopChecking();
+
+            if(source.isPlaying) source.Stop();
         }
     }
 }

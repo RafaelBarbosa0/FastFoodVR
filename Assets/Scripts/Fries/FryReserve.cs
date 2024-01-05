@@ -27,6 +27,8 @@ public class FryReserve : MonoBehaviour
         scoops = maxScoops;
 
         transform.localScale = startingScale;
+
+        AudioManager.Instance.PlaySFX("Fry", true);
     }
 
 
@@ -37,6 +39,8 @@ public class FryReserve : MonoBehaviour
             Scoop scoop = other.GetComponent<Scoop>();
             if (!scoop.Filled)// If scoop doesn't already have fries on it.
             {
+                AudioManager.Instance.PlaySFX("Fry", true);
+
                 scoop.SetScoop();
                 scoops--;
 

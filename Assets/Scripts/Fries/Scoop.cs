@@ -15,6 +15,8 @@ public class Scoop : MonoBehaviour
     {
         fryModel.SetActive(true);
         filled = true;
+
+        AudioManager.Instance.PlaySFX("Fry", true);
     }
 
     private void OnTriggerEnter(Collider other)

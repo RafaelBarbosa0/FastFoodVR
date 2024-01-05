@@ -30,5 +30,7 @@ public class FryBox : MonoBehaviour
         fryModels[currentScoops].SetActive(true);
 
         currentScoops++;
+
+        AudioManager.Instance.PlaySFX("Fry", true);
     }
 }
