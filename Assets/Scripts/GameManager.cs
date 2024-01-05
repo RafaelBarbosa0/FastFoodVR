@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private DestroyOrder destroyOrder;
 
+    [SerializeField]
+    private TMP_Text scoreText;
+
     private bool gameEnded;
 
     private void Start()
@@ -91,7 +94,7 @@ public class GameManager : MonoBehaviour
     {
         if (IsOrderCorrect())
         {
-            score++;
+            UpdateScore();
         }
 
         else
@@ -147,6 +150,12 @@ public class GameManager : MonoBehaviour
 
         // If passed checks order is correct.
         return true;
+    }
+
+    private void UpdateScore()
+    {
+        score++;
+        scoreText.text = score.ToString();
     }
 
     private void RemoveLife()
