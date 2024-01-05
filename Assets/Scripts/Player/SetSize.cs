@@ -25,6 +25,8 @@ public class SetSize : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.GameStarted) return;
+
         Vector2 analogValue = changeHeightAction.action.ReadValue<Vector2>();
 
         if(analogValue.y == 0) changed = false;

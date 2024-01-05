@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject uiRay;
 
+    public bool GameStarted { get => gameStarted; private set => gameStarted = value; }
+
     private void Start()
     {
         if (Instance == null) Instance = this;
