@@ -44,7 +44,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TMP_Text scoreText;
 
+    private bool gameStarted;
     private bool gameEnded;
+
+    [Header("Start Game Stuff")]
+    [SerializeField]
+    private GameObject anchors;
+    [SerializeField]
+    private GameObject startCanvas;
+    [SerializeField]
+    private GameObject uiRay;
 
     private void Start()
     {
@@ -52,13 +61,11 @@ public class GameManager : MonoBehaviour
         else if (Instance != this) Destroy(gameObject);
 
         lives = maxLives;
-
-        StartNewOrder();
     }
 
     private void Update()
     {
-        if(gameEnded) return;
+        if(gameEnded || !gameStarted) return;
 
         currentTicketTime -= Time.deltaTime;
 
@@ -166,6 +173,24 @@ public class GameManager : MonoBehaviour
         lightIndex++;
 
         if (lives <= 0) EndGame();
+    }
+
+    /// <summary>
+    ///  Necessary steps for starting game.
+    /// </summary>
+    public void StartGame()
+    {
+        // Start the initial order.
+        StartNewOrder();
+
+        // Enable and disable necessary elements.
+        anchors.SetActive(true);
+
+        startCanvas.SetActive(false);
+        uiRay.SetActive(false);
+
+        // Set game as started.
+        gameStarted = true;
     }
 
     private void EndGame()
