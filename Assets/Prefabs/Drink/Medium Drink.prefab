@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7511768, y: 0.7873246, z: 0.7657971}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4441022354360668077}
@@ -257,6 +257,8 @@ MonoBehaviour:
   m_AddDefaultGrabTransformers: 1
   drink: {fileID: 7426905583954192287}
   rb: {fileID: 796787517168189831}
+  machineOffset: 0.0132
+  trayOffset: 0
 --- !u!1 &2351458801443860429
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +497,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5150502, y: 1.6551632, z: 1.3971101}
+  m_LocalScale: {x: 1.803775, y: 1.8095807, z: 1.663359}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7741399215778316981}

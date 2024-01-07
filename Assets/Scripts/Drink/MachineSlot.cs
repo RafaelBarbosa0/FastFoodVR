@@ -19,22 +19,60 @@ public class MachineSlot : MonoBehaviour
     [SerializeField]
     private MeshRenderer lightRenderer;
     [SerializeField]
-    private Material offMat;
+    private Material fillingMat;
     [SerializeField]
-    private Material onMat;
+    private Material filledMat;
+    private Material defaultMat;
 
     private bool slotted;// Is a drink slotted into this slot.
+
+    [SerializeField]
+    private MeshRenderer slotRenderer;
+
+    [SerializeField]
+    private GameObject stream;
 
     public DRINKTYPE DrinkType { get => drinkType; private set => drinkType = value; }
     public bool Slotted { get => slotted; set => slotted = value; }
 
-    public void SetLightOn()
+
+    private void Start()
     {
-        lightRenderer.material = onMat;
+        defaultMat = lightRenderer.material;
     }
 
-    public void SetLightOff()
+    public void SetLightDisabled()
     {
-        lightRenderer.material = offMat;
+       if(lightRenderer.material != defaultMat) lightRenderer.material = defaultMat;
+    }
+
+    public void SetLightFilled()
+    {
+        lightRenderer.material = filledMat;
+    }
+
+    public void SetLightFilling()
+    {
+        lightRenderer.material = fillingMat;
+    }
+
+    public void disableHighlight()
+    {
+        slotRenderer.enabled = false;
+    }
+
+    public void enableHighlight()
+    {
+        slotRenderer.enabled = true;
+    }
+
+    public void EnableStream()
+    {
+        stream.SetActive(true);
+    }
+
+    public void DisableStream()
+    {
+        stream.SetActive(false);
     }
 }
