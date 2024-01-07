@@ -15,6 +15,11 @@ public class DrinkGrab : XRGrabInteractable
     [SerializeField]
     private Rigidbody rb;
 
+    [SerializeField]
+    private float machineOffset;
+    [SerializeField]
+    private float trayOffset;
+
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
@@ -26,15 +31,17 @@ public class DrinkGrab : XRGrabInteractable
     {
         base.OnSelectExited(args);
 
-        if(machineSlot != null && !machineSlot.Slotted && !drink.IsFull)// Drop drink into machine slot.
+        if(machineSlot != null && !machineSlot.Slotted && !drink.IsFull) // Drop drink into machine slot.
         {
             // Position drink in slot.
-            Vector3 pos = machineSlot.transform.position;
+            Vector3 pos = machineSlot.transform.position - new Vector3(0, machineOffset, 0);
             transform.position = pos;
             transform.rotation = Quaternion.identity;
 
             // Setup machine slot.
-            machineSlot.SetLightOn();
+            machineSlot.SetLightFilling();
+            machineSlot.EnableStream();
+            machineSlot.disableHighlight();
             machineSlot.Slotted = true;
 
             // Setup drink and start filling.
@@ -49,7 +56,7 @@ public class DrinkGrab : XRGrabInteractable
             enabled = false;
         }
 
-        else if(drinkSlot != null && !drinkSlot.Slotted)
+        else if(drinkSlot != null && !drinkSlot.Slotted) // Drop drink into tray slot.
         {
             // Position drink in slot.
             Vector3 pos = drinkSlot.transform.position;
@@ -81,8 +88,14 @@ public class DrinkGrab : XRGrabInteractable
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "MachineSlot")
+        if(other.tag == "MachineSlot" && machineSlot != null)
         {
+            if (drink.IsFull)
+            {
+                machineSlot.enableHighlight();
+                machineSlot.SetLightDisabled();
+            }
+
             machineSlot = null;
         }
 

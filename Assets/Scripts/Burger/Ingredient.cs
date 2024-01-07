@@ -10,7 +10,7 @@ public class Ingredient : MonoBehaviour
         CHEESE,
         COWTONGUE,
         GREENBRISTOL,
-        PURPLEBRISTOL,
+        BLUERING,
         BUN
     }
 
