@@ -6915,7 +6915,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.044512905}
+  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.033116594}
   m_Center: {x: -0.0003129542, y: 0.0008957982, z: 0.000528574}
 --- !u!114 &905460403
 MonoBehaviour:
@@ -10002,7 +10002,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.04651459}
+  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.033130866}
   m_Center: {x: -0.0003129556, y: 0.00089580036, z: 0.00038709765}
 --- !u!114 &1250743487
 MonoBehaviour:
@@ -11730,7 +11730,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.041064832}
+  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.029645724}
   m_Center: {x: -0.0003129542, y: 0.0008957982, z: 0.000528574}
 --- !u!114 &1661549740
 MonoBehaviour:
@@ -11820,7 +11820,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.04094006}
+  m_Size: {x: 0.0759266, y: 0.14350474, z: 0.028459752}
   m_Center: {x: -0.0003129542, y: 0.0008957982, z: 0.000528574}
 --- !u!114 &1671826320
 MonoBehaviour:
@@ -17763,7 +17763,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6117109, y: 1.4191741, z: 1.5936856}
+  m_Size: {x: 1.6117088, y: 1.4191741, z: 0.8667471}
   m_Center: {x: -0.021434449, y: 0.7010505, z: -0.008267099}
 --- !u!65 &7385749355729334617
 BoxCollider:
@@ -17784,7 +17784,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5903869, y: 1.5329049, z: 1.5083796}
+  m_Size: {x: 1.5903841, y: 1.5329049, z: 0.7739296}
   m_Center: {x: -0.016302833, y: 0.77885187, z: -0.0020617906}
 --- !u!65 &7385749356140372889
 BoxCollider:
@@ -17805,7 +17805,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4974159, y: 1.290941, z: 1.3165158}
+  m_Size: {x: 1.4974159, y: 1.290941, z: 0.75084233}
   m_Center: {x: -0.03275767, y: 0.14546959, z: -0.017350774}
 --- !u!23 &7985685202816727733
 MeshRenderer:
