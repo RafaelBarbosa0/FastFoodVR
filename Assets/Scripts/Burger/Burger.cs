@@ -13,7 +13,7 @@ public class Burger : MonoBehaviour
     [SerializeField]
     private int cowTongueAmount;
     [SerializeField]
-    private int greenBristolAmount;
+    private int greenCandyAmount;
     [SerializeField]
     private int blueRingAmount;
     [SerializeField]
@@ -23,7 +23,7 @@ public class Burger : MonoBehaviour
     public int LettuceAmount { get => lettuceAmount; private set => lettuceAmount = value; }
     public int CheeseAmount { get => cheeseAmount; private set => cheeseAmount = value; }
     public int CowTongueAmount { get => cowTongueAmount; private set => cowTongueAmount = value; }
-    public int GreenBristolAmount { get => greenBristolAmount; private set => greenBristolAmount = value; }
+    public int GreenCandyAmount { get => greenCandyAmount; private set => greenCandyAmount = value; }
     public int BlueRingAmount { get => blueRingAmount; private set => blueRingAmount = value; }
     public int BunAmount { get => bunAmount; private set => bunAmount = value; }
 
@@ -53,8 +53,8 @@ public class Burger : MonoBehaviour
                 case Ingredient.IngredientType.COWTONGUE: 
                     cowTongueAmount++; 
                     break;
-                case Ingredient.IngredientType.GREENBRISTOL:
-                    greenBristolAmount++;
+                case Ingredient.IngredientType.GREENCANDY:
+                    greenCandyAmount++;
                     break;
                 case Ingredient.IngredientType.BLUERING:
                     blueRingAmount++;
@@ -92,8 +92,8 @@ public class Burger : MonoBehaviour
                 case Ingredient.IngredientType.COWTONGUE:
                     cowTongueAmount--;
                     break;
-                case Ingredient.IngredientType.GREENBRISTOL:
-                    greenBristolAmount--;
+                case Ingredient.IngredientType.GREENCANDY:
+                    greenCandyAmount--;
                     break;
                 case Ingredient.IngredientType.BLUERING:
                     blueRingAmount--;

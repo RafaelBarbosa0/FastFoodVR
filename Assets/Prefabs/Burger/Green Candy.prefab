@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: -3288649725091900137}
   - component: {fileID: 4873671276131299606}
   m_Layer: 0
-  m_Name: Green Bristol
+  m_Name: Green Candy
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

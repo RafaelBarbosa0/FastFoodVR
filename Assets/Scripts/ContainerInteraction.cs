@@ -8,13 +8,16 @@ public class ContainerInteraction : XRGrabInteractable
     [SerializeField]
     private GameObject objectToSpawn;// Object that this container will spawn on interaction.
 
+    [SerializeField]
+    private Vector3 spawnOffset;
+
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
 
         // Make parent with container's position to spawn gameobject in container.
         GameObject setParent = new GameObject();
-        setParent.transform.position = transform.position;
+        setParent.transform.position = transform.position + spawnOffset;
 
         // Spawn object.
         GameObject obj = Instantiate(objectToSpawn, setParent.transform);

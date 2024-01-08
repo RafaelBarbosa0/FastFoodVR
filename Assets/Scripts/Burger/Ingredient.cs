@@ -9,7 +9,7 @@ public class Ingredient : MonoBehaviour
         LETTUCE,
         CHEESE,
         COWTONGUE,
-        GREENBRISTOL,
+        GREENCANDY,
         BLUERING,
         BUN
     }
