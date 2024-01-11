@@ -79,8 +79,6 @@ public class Frying : MonoBehaviour
         fries.gameObject.SetActive(true);
 
         ChangeFryMat(rawMats);
-
-        circle.ProgressCircle.color = Color.yellow;
     }
 
     public void RemoveFries()

@@ -6,8 +6,6 @@ public class BasketStatus : MonoBehaviour
 {
     [SerializeField]
     private GameObject circleObj;
-    [SerializeField]
-    private FriesProgressCircle circle;
 
     [SerializeField]
     private Frying frying;
@@ -32,7 +30,6 @@ public class BasketStatus : MonoBehaviour
 
             // Set progress circle.
             circleObj.SetActive(true);
-            circle.StartChecking();
 
             if(!source.isPlaying) source.Play();
         }
@@ -46,7 +43,7 @@ public class BasketStatus : MonoBehaviour
             InOil = false;
 
             // Remove progress circle.
-            circle.StopChecking();
+            circleObj.SetActive(false);
 
             if(source.isPlaying) source.Stop();
         }

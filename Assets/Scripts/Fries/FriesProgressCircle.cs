@@ -7,47 +7,23 @@ public class FriesProgressCircle : MonoBehaviour
 {
     private Frying frying;
 
-    private float minTreshold;
-    private float maxTreshold;
+    [SerializeField]
+    private Transform followTransform;
 
     [SerializeField]
     private GameObject progressObject;
     [SerializeField]
     private Image progressCircle;
 
-    private bool isChecking;
-
-    public Image ProgressCircle { get => progressCircle; set => progressCircle = value; }
-
     private void Start()
     {
         frying = GetComponent<Frying>();
-
-        minTreshold = frying.MinFry;
-        maxTreshold = frying.MaxFry;
-
-        progressCircle.color = Color.yellow;
     }
 
     private void Update()
     {
-        if (isChecking)
-        {
-            progressCircle.fillAmount = frying.FryStatus;
+        progressCircle.fillAmount = frying.FryStatus;
 
-            if (progressCircle.fillAmount > minTreshold && progressCircle.fillAmount < maxTreshold) progressCircle.color = Color.green;
-            else if (progressCircle.fillAmount > maxTreshold) progressCircle.color = Color.red;
-        }
-    }
-
-    public void StartChecking()
-    {
-        isChecking = true;
-    }
-
-    public void StopChecking()
-    {
-        isChecking = false;
-        progressObject.SetActive(false);
+        progressObject.transform.position = followTransform.position;
     }
 }

@@ -17,7 +17,12 @@ public class SideCooking : MonoBehaviour
     private float maxCook;// Value when burger enters overcooked state.
 
     [SerializeField]
-    private GameObject cookStatus;// Interact with cooking progress circle.
+    private GameObject cookStatusPrefab;// Interact with cooking progress circle.
+    [SerializeField]
+    private Transform cookStatusTransform;
+    [SerializeField]
+    private Vector3 statusRotation;
+    private CookStatus activeStatus;
 
     [SerializeField]
     private MeshRenderer sideMat;// Reference to material for this side of burger.
@@ -83,8 +88,9 @@ public class SideCooking : MonoBehaviour
             isCooking = true;
 
             // Start progress circle.
-            cookStatus.SetActive(true);
-            cookStatus.GetComponent<CookStatus>().StartChecking();
+            GameObject go = Instantiate(cookStatusPrefab);
+            activeStatus = go.GetComponent<CookStatus>();
+            activeStatus.SetParameters(this, cookStatusTransform, statusRotation);
         }
     }
 
@@ -96,8 +102,8 @@ public class SideCooking : MonoBehaviour
             isCooking = false;
 
             // Stop progress circle.
-            cookStatus.GetComponent<CookStatus>().StopChecking();
-            cookStatus.SetActive(false);
+            Destroy(activeStatus.gameObject);
+            activeStatus = null;
         }
     }
 }

@@ -107,7 +107,7 @@ public class Ticket : MonoBehaviour
         if (lettuceAmount > 0) ingredientText.text += lettuceAmount.ToString() + " Lettuce \n";
         if (cheeseAmount > 0) ingredientText.text += cheeseAmount.ToString() + " Cheese \n";
         if (cowTongueAmount > 0) ingredientText.text += cowTongueAmount.ToString() + " Cow Tongue \n";
-        if (greenCandyAmount > 0) ingredientText.text += greenCandyAmount.ToString() + " Green Candy \n";
+        if (greenCandyAmount > 0) ingredientText.text += greenCandyAmount.ToString() + " Candy \n";
         if (blueRingAmount > 0) ingredientText.text += blueRingAmount.ToString() + " Blue Ring \n";
 
         ingredientText.text += "Top with bun";
