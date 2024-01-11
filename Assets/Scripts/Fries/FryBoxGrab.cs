@@ -9,6 +9,9 @@ public class FryBoxGrab : XRGrabInteractable
 
     private Rigidbody rb;
 
+    [SerializeField]
+    private Vector3 slotOffset;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,7 +35,7 @@ public class FryBoxGrab : XRGrabInteractable
         {
             if (!rb.isKinematic) rb.isKinematic = true;
 
-            Vector3 pos = slot.transform.position;
+            Vector3 pos = slot.transform.position - slotOffset;
             transform.position = pos;
             transform.rotation = Quaternion.identity;
 

@@ -8,6 +8,9 @@ public class DrinkSlot : MonoBehaviour
 
     private bool slotted;
 
+    [SerializeField]
+    private GameObject highlight;
+
     public bool Slotted { get => slotted; private set => slotted = value; }
 
     private void Start()
@@ -17,12 +20,16 @@ public class DrinkSlot : MonoBehaviour
 
     public void SetTrayDrink(Drink drink)
     {
+        highlight.SetActive(false);
+
         tray.Drink = drink;
         slotted = true;
     }
 
     public void RemoveTrayDrink()
     {
+        highlight.SetActive(true);
+
         tray.Drink = null;
         slotted = false;
     }

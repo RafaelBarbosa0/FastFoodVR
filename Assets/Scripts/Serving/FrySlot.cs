@@ -8,6 +8,9 @@ public class FrySlot : MonoBehaviour
 
     private bool slotted;
 
+    [SerializeField]
+    private GameObject highlight;
+
     public bool Slotted { get => slotted; private set => slotted = value; }
 
     private void Start()
@@ -17,12 +20,16 @@ public class FrySlot : MonoBehaviour
 
     public void SetTrayFries(FryBox box)
     {
+        highlight.SetActive(false);
+
         tray.FryBox = box;
         slotted = true;
     }
 
     public void RemoveTrayFries()
     {
+        highlight.SetActive(true);
+
         tray.FryBox = null;
         slotted = false;
     }

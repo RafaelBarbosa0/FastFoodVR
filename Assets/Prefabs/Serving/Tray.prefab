@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1455054700307358371}
   - component: {fileID: 2180385150631856355}
   m_Layer: 0
-  m_Name: Fry
+  m_Name: Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 157553239638225063}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10907568, y: 2.7111912, z: 0.13183}
+  m_LocalPosition: {x: 0.0109, y: 0.666, z: 0}
+  m_LocalScale: {x: 0.1791782, y: 4.0450974, z: 0.27017242}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8274525104391554669}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 250bd3636a8e60e4790c2214d1401778, type: 2}
+  - {fileID: 2100000, guid: 0400b58fef844394fb5d3c5454eb8d76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6788883370095778689}
   - component: {fileID: 1186638239804657506}
   - component: {fileID: 4685786839773743231}
+  - component: {fileID: 9189686450089933579}
   m_Layer: 0
   m_Name: Drink Slot
   m_TagString: DrinkSlot
@@ -136,8 +137,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.12178323, y: 4.73268, z: 0.23025432}
-  m_Center: {x: -0.0028588537, y: 0.10006365, z: 0.00020273603}
+  m_Size: {x: 0.17435604, y: 5.9381294, z: 0.2752453}
+  m_Center: {x: 0.0012621203, y: 0.7027908, z: 0.00065598765}
 --- !u!114 &4685786839773743231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +151,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41acf19f0804630419c85630460a92e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlight: {fileID: 2414861626699993407}
+--- !u!114 &9189686450089933579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727385835092660261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4648e29d9bd2b46b61a726d10ec8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ValidTag: Drink
+  noHighlight: {fileID: 2100000, guid: 0400b58fef844394fb5d3c5454eb8d76, type: 2}
+  highlight: {fileID: 2100000, guid: f3e5e9229b27d8d40ba7981ba8a9e8d6, type: 2}
+  slotRenderer: {fileID: 3637869062949613733}
 --- !u!1 &2107704043523812851
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,8 +334,8 @@ Transform:
   m_GameObject: {fileID: 2414861626699993407}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.10215138, y: 2.1719525, z: 0.16233802}
+  m_LocalPosition: {x: 0, y: 0.726, z: 0}
+  m_LocalScale: {x: 0.19322218, y: 2.8965814, z: 0.30790508}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 876184047300938933}
@@ -350,7 +368,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 250bd3636a8e60e4790c2214d1401778, type: 2}
+  - {fileID: 2100000, guid: 0400b58fef844394fb5d3c5454eb8d76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -626,6 +644,7 @@ GameObject:
   - component: {fileID: 216242312003885502}
   - component: {fileID: 5390173298653195513}
   - component: {fileID: 756564169524779138}
+  - component: {fileID: 5695446121735808981}
   m_Layer: 0
   m_Name: Fry Slot
   m_TagString: FrySlot
@@ -668,8 +687,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.111996144, y: 2.7660332, z: 0.14820501}
-  m_Center: {x: 0.00008595275, y: 0.029200695, z: 0}
+  m_Size: {x: 0.17751221, y: 4.307185, z: 0.2677071}
+  m_Center: {x: 0.01122012, y: 0.79977953, z: 0.0010338768}
 --- !u!114 &756564169524779138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +701,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af10f72f73b9b049a209144e5b9c141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highlight: {fileID: 157553239638225063}
+--- !u!114 &5695446121735808981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068661590812565758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4648e29d9bd2b46b61a726d10ec8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ValidTag: Fries
+  noHighlight: {fileID: 2100000, guid: 0400b58fef844394fb5d3c5454eb8d76, type: 2}
+  highlight: {fileID: 2100000, guid: f3e5e9229b27d8d40ba7981ba8a9e8d6, type: 2}
+  slotRenderer: {fileID: 2180385150631856355}
 --- !u!1 &5951407723977591767
 GameObject:
   m_ObjectHideFlags: 0

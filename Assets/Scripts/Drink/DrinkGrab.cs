@@ -59,7 +59,7 @@ public class DrinkGrab : XRGrabInteractable
         else if(drinkSlot != null && !drinkSlot.Slotted) // Drop drink into tray slot.
         {
             // Position drink in slot.
-            Vector3 pos = drinkSlot.transform.position;
+            Vector3 pos = drinkSlot.transform.position - new Vector3(0, trayOffset, 0);
             transform.position = pos;
             transform.rotation = Quaternion.identity;
 
