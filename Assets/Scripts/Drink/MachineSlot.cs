@@ -7,10 +7,10 @@ public class MachineSlot : MonoBehaviour
     public enum DRINKTYPE
     {
         EMPTY,
-        DRINKONE,
-        DRINKTWO,
-        DRINKTHREE,
-        DRINKFOUR
+        Bepsi,
+        Ecola,
+        Logger,
+        Sprunk
     }
 
     [SerializeField]
@@ -32,6 +32,8 @@ public class MachineSlot : MonoBehaviour
     [SerializeField]
     private GameObject stream;
 
+    private AudioSource audioSource;
+
     public DRINKTYPE DrinkType { get => drinkType; private set => drinkType = value; }
     public bool Slotted { get => slotted; set => slotted = value; }
 
@@ -39,6 +41,7 @@ public class MachineSlot : MonoBehaviour
     private void Start()
     {
         defaultMat = lightRenderer.material;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void SetLightDisabled()
@@ -74,5 +77,15 @@ public class MachineSlot : MonoBehaviour
     public void DisableStream()
     {
         stream.SetActive(false);
+    }
+
+    public void PlayAudio()
+    {
+        audioSource.Play();
+    }
+
+    public void StopAudio()
+    {
+        audioSource.Stop();
     }
 }

@@ -79,6 +79,8 @@ public class Frying : MonoBehaviour
         fries.gameObject.SetActive(true);
 
         ChangeFryMat(rawMats);
+
+        AudioManager.Instance.PlaySFX("Fry", true);
     }
 
     public void RemoveFries()

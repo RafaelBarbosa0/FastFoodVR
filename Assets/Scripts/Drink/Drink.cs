@@ -71,6 +71,7 @@ public class Drink : MonoBehaviour
                 // Setup slot to be empty.
                 currentSlot.SetLightFilled();
                 currentSlot.DisableStream();
+                currentSlot.StopAudio();
                 currentSlot.Slotted = false;
                 currentSlot = null;
 

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a603c13bef9417a4bad4fc091c617eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0
+  size: 2
   type: 0
   maxDrink: 1
   currentDrink: 0

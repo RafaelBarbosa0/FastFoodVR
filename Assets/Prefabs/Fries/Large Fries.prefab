@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c513e6b9d6f7541ad9179f0f73cc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 0
+  size: 2
   maxScoops: 3
   fryModels:
   - {fileID: 6797008224339546629}

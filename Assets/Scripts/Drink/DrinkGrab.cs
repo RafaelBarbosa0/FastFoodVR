@@ -42,6 +42,7 @@ public class DrinkGrab : XRGrabInteractable
             machineSlot.SetLightFilling();
             machineSlot.EnableStream();
             machineSlot.disableHighlight();
+            machineSlot.PlayAudio();
             machineSlot.Slotted = true;
 
             // Setup drink and start filling.
