@@ -30,11 +30,13 @@ public class Frying : MonoBehaviour
     private GameObject fries;
     private MeshRenderer fryRenderer;
     [SerializeField]
-    private Material uncooked;
+    private Material[] rawMats;
     [SerializeField]
-    private Material cooked;
+    private Material[] cookedMats;
     [SerializeField]
-    private Material burnt;
+    private Material[] burntMats;
+
+    private Material[] currentMat;
 
     public float MinFry { get => minFry; private set => minFry = value; }
     public float MaxFry { get => maxFry; private set => maxFry = value; }
@@ -64,8 +66,8 @@ public class Frying : MonoBehaviour
         {
             FryStatus += frySpeed * Time.deltaTime;
 
-            if (fryStatus > minFry && fryStatus < maxFry && fryRenderer.material != cooked) ChangeFryMat(cooked);
-            if (fryStatus > maxFry && fryRenderer.material != burnt) ChangeFryMat(burnt);
+            if (fryStatus > minFry && fryStatus < maxFry && currentMat != cookedMats) ChangeFryMat(cookedMats);
+            if (fryStatus > maxFry && currentMat != burntMats) ChangeFryMat(burntMats);
         }
     }
 
@@ -76,7 +78,7 @@ public class Frying : MonoBehaviour
         hasFries = true;
         fries.gameObject.SetActive(true);
 
-        ChangeFryMat(uncooked);
+        ChangeFryMat(rawMats);
 
         circle.ProgressCircle.color = Color.yellow;
     }
@@ -88,9 +90,11 @@ public class Frying : MonoBehaviour
         fries.gameObject.SetActive(false);
     }
 
-    private void ChangeFryMat(Material mat)
+    private void ChangeFryMat(Material[] newMats)
     {
-        fryRenderer.material = mat;
+        fryRenderer.materials = newMats;
+
+        currentMat = newMats;
     }
 
     private void OnTriggerEnter(Collider other)

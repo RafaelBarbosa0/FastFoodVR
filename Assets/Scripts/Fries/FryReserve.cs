@@ -8,25 +8,27 @@ public class FryReserve : MonoBehaviour
     [SerializeField]
     private int maxScoops;
 
-    private Vector3 startingScale;
-
     [SerializeField]
-    private Vector3 scaleAdjust;
+    private GameObject[] fryModels;
 
     public bool IsFull => scoops == maxScoops;
 
     private void Start()
     {
-        startingScale = transform.localScale;
-
-        gameObject.SetActive(false);
+        foreach (GameObject go in fryModels)
+        {
+            go.SetActive(false);
+        }
     }
 
     public void SetScoops()
     {
         scoops = maxScoops;
 
-        transform.localScale = startingScale;
+        foreach (GameObject go in fryModels)
+        {
+            go.SetActive(true);
+        }
 
         AudioManager.Instance.PlaySFX("Fry", true);
     }
@@ -39,17 +41,16 @@ public class FryReserve : MonoBehaviour
             Scoop scoop = other.GetComponent<Scoop>();
             if (!scoop.Filled)// If scoop doesn't already have fries on it.
             {
+                // Handle scoop.
                 AudioManager.Instance.PlaySFX("Fry", true);
 
                 scoop.SetScoop();
                 scoops--;
 
-                if(scoops <= 0) gameObject.SetActive(false);// When fries run out.
-
-                else
-                {
-                    transform.localScale -= scaleAdjust;
-                }
+                // Handle fry reserve visuals.
+                if(scoops == 4) fryModels[2].SetActive(false);
+                if(scoops == 2) fryModels[1].SetActive(false);
+                if(scoops == 0) fryModels[0].SetActive(false);
             }
         }
     }
