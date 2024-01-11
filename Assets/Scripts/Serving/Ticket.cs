@@ -16,8 +16,8 @@ public class Ticket : MonoBehaviour
     private int lettuceAmount;
     private int cheeseAmount;
     private int cowTongueAmount;
-    private int greenBristolAmount;
-    private int purpleBristolAmount;
+    private int greenCandyAmount;
+    private int blueRingAmount;
 
     [SerializeField]
     private Recipe[] recipes;
@@ -40,8 +40,8 @@ public class Ticket : MonoBehaviour
     public int LettuceAmount { get => lettuceAmount; private set => lettuceAmount = value; }
     public int CheeseAmount { get => cheeseAmount; private set => cheeseAmount = value; }
     public int CowTongueAmount { get => cowTongueAmount; private set => cowTongueAmount = value; }
-    public int GreenBristolAmount { get => greenBristolAmount; private set => greenBristolAmount = value; }
-    public int PurpleBristolAmount { get => purpleBristolAmount; private set => purpleBristolAmount = value; }
+    public int GreenCandyAmount { get => greenCandyAmount; private set => greenCandyAmount = value; }
+    public int BlueRingAmount { get => blueRingAmount; private set => blueRingAmount = value; }
 
     private void Start()
     {
@@ -86,8 +86,8 @@ public class Ticket : MonoBehaviour
         lettuceAmount = selectedRecipe.LettuceAmount;
         cheeseAmount = selectedRecipe.CheeseAmount;
         cowTongueAmount = selectedRecipe.CowTongueAmount;
-        greenBristolAmount = selectedRecipe.GreenBristolAmount;
-        purpleBristolAmount = selectedRecipe.PurpleBristolAmount;
+        greenCandyAmount = selectedRecipe.GreenCandyAmount;
+        blueRingAmount = selectedRecipe.BlueRingAmount;
     }
 
     private void SetText()
@@ -107,8 +107,8 @@ public class Ticket : MonoBehaviour
         if (lettuceAmount > 0) ingredientText.text += lettuceAmount.ToString() + " Lettuce \n";
         if (cheeseAmount > 0) ingredientText.text += cheeseAmount.ToString() + " Cheese \n";
         if (cowTongueAmount > 0) ingredientText.text += cowTongueAmount.ToString() + " Cow Tongue \n";
-        if (greenBristolAmount > 0) ingredientText.text += greenBristolAmount.ToString() + " Green Bristol \n";
-        if (purpleBristolAmount > 0) ingredientText.text += purpleBristolAmount.ToString() + " Purple Bristol \n";
+        if (greenCandyAmount > 0) ingredientText.text += greenCandyAmount.ToString() + " Green Candy \n";
+        if (blueRingAmount > 0) ingredientText.text += blueRingAmount.ToString() + " Blue Ring \n";
 
         ingredientText.text += "Top with bun";
     }

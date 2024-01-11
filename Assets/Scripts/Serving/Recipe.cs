@@ -14,15 +14,15 @@ public class Recipe : ScriptableObject
     [SerializeField]
     private int cowTongueAmount;
     [SerializeField]
-    private int greenBristolAmount;
+    private int greenCandyAmount;
     [SerializeField]
-    private int purpleBristolAmount;
+    private int blueRingAmount;
 
     public int PattyAmount { get => pattyAmount; private set => pattyAmount = value; }
     public int LettuceAmount { get => lettuceAmount; private set => lettuceAmount = value; }
     public int CheeseAmount { get => cheeseAmount; private set => cheeseAmount = value; }
     public int CowTongueAmount { get => cowTongueAmount; private set => cowTongueAmount = value; }
-    public int GreenBristolAmount { get => greenBristolAmount; private set => greenBristolAmount = value; }
-    public int PurpleBristolAmount { get => purpleBristolAmount; private set => purpleBristolAmount = value; }
+    public int GreenCandyAmount { get => greenCandyAmount; private set => greenCandyAmount = value; }
+    public int BlueRingAmount { get => blueRingAmount; private set => blueRingAmount = value; }
 
 }

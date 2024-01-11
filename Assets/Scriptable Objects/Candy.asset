@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e49dbf5e2ddd654699456cd4f4b7108, type: 3}
-  m_Name: Bristol
+  m_Name: Candy
   m_EditorClassIdentifier: 
   pattyAmount: 1
   lettuceAmount: 1
   cheeseAmount: 1
   cowTongueAmount: 0
-  greenBristolAmount: 1
-  purpleBristolAmount: 1
+  greenCandyAmount: 1
+  blueRingAmount: 1

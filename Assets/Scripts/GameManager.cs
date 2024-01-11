@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
 
         // Check burger.
         if(burger.PattyAmount != currentTicket.PattyAmount || burger.LettuceAmount != currentTicket.LettuceAmount || burger.CheeseAmount != currentTicket.CheeseAmount
-            || burger.CowTongueAmount != currentTicket.CowTongueAmount || burger.GreenCandyAmount != currentTicket.GreenBristolAmount || burger.BlueRingAmount != currentTicket.PurpleBristolAmount || burger.BunAmount != 1)
+            || burger.CowTongueAmount != currentTicket.CowTongueAmount || burger.GreenCandyAmount != currentTicket.GreenCandyAmount || burger.BlueRingAmount != currentTicket.BlueRingAmount || burger.BunAmount != 1)
         {
             Debug.Log("Burger issue");
             return false;
