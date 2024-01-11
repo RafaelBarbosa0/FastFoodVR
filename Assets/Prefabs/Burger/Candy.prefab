@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091335486430760164}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.6524291, z: 0, w: 0.75784975}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.14166419, y: 0.14166419, z: 0.14166419}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2856097375659081085}
   m_Father: {fileID: 5393920816923271843}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 81.45, z: 0}
 --- !u!1 &1175903468546457769
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: -3288649725091900137}
   - component: {fileID: 4873671276131299606}
   m_Layer: 0
-  m_Name: Green Candy
+  m_Name: Candy
   m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,8 +114,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08065133, y: 0.012938841, z: 0.050740644}
-  m_Center: {x: -0.0013592839, y: 0.00178114, z: -0.011557445}
+  m_Size: {x: 0.11321335, y: 0.012938841, z: 0.03962191}
+  m_Center: {x: -0.00837468, y: 0.00178114, z: 0.006444322}
 --- !u!114 &-3288649725091900137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,7 +322,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956635234778000393}
-  m_Mesh: {fileID: 3504406814125657738, guid: ab6673add436bb44995f508d4dfe44d8, type: 3}
+  m_Mesh: {fileID: -8916623841366747464, guid: ab6673add436bb44995f508d4dfe44d8, type: 3}
 --- !u!23 &1148065810051821901
 MeshRenderer:
   m_ObjectHideFlags: 0
