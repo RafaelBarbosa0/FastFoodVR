@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.XR.CoreUtils;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    [SerializeField]
+    private XROrigin origin;
+    [SerializeField]
+    private Transform spawnPosition;
+    [SerializeField]
+    private GameObject sizeIndicator;
 
     [SerializeField]
     private int maxLives;
@@ -76,6 +84,8 @@ public class GameManager : MonoBehaviour
         else if (Instance != this) Destroy(gameObject);
 
         lives = maxLives;
+
+        origin.MoveCameraToWorldLocation(spawnPosition.position);
     }
 
     private void Update()
@@ -210,7 +220,9 @@ public class GameManager : MonoBehaviour
         startCanvas.SetActive(false);
         uiRay.SetActive(false);
 
-        playerPosition.position = startPosition.position;
+        origin.MoveCameraToWorldLocation(startPosition.position);
+
+        sizeIndicator.SetActive(false);
 
         // Start music.
         AudioManager.Instance.PlayMusic("MainTheme");
@@ -235,7 +247,7 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         // Move player to end position.
-        playerPosition.position = endPosition.position;
+        origin.MoveCameraToWorldLocation(endPosition.position);
 
         // Enable and disable necessary elements.
         anchors.SetActive(false);
@@ -244,7 +256,7 @@ public class GameManager : MonoBehaviour
         uiRay.SetActive(true);
 
         // Set score text.
-        endScore.text = "Score : " + score.ToString();
+        endScore.text = score.ToString();
 
         // Stop music.
         AudioManager.Instance.StopMusic();

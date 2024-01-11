@@ -326,7 +326,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  slotOffset: {x: -0.005, y: 0.025, z: 0}
+  slotOffset: {x: -0.005, y: 0, z: 0}
 --- !u!114 &5943503988311061456
 MonoBehaviour:
   m_ObjectHideFlags: 0

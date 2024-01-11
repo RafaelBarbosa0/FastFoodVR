@@ -258,7 +258,7 @@ MonoBehaviour:
   drink: {fileID: 7426905583954192287}
   rb: {fileID: 796787517168189831}
   machineOffset: 0.08
-  trayOffset: 0.035
+  trayOffset: 0
 --- !u!1 &3486643866136326535
 GameObject:
   m_ObjectHideFlags: 0
