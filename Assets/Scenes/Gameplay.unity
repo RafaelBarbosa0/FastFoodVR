@@ -11273,7 +11273,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.065
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1204165930
 GameObject:
@@ -12582,7 +12582,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.065
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1384818915
 GameObject:
@@ -15844,7 +15844,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 1843763374}
   m_CameraFloorOffsetObject: {fileID: 502534888}
   m_RequestedTrackingOriginMode: 1
-  m_CameraYOffset: 1.5
+  m_CameraYOffset: 0.6
 --- !u!4 &1843763377
 Transform:
   m_ObjectHideFlags: 0
