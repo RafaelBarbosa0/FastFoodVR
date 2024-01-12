@@ -258,8 +258,9 @@ public class GameManager : MonoBehaviour
         // Set score text.
         endScore.text = score.ToString();
 
-        // Stop music.
+        // Audio.
         AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlaySFX("Defeat", true);
 
         // Set game as ended.
         gameEnded = true;

@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3178ddf8eab1d248820d33f596a6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookSpeed: 0.05
+  cookSpeed: 0.025
   minCook: 0.331
   maxCook: 0.663
   cookStatusPrefab: {fileID: 1477747532703742666, guid: d469eed24e97e9942bb9ae670abb1c58,
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3178ddf8eab1d248820d33f596a6d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cookSpeed: 0.05
+  cookSpeed: 0.025
   minCook: 0.331
   maxCook: 0.663
   cookStatusPrefab: {fileID: 1477747532703742666, guid: d469eed24e97e9942bb9ae670abb1c58,
