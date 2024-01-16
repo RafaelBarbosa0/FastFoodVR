@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: FastFoodVRProject
+  companyName: OkamiTwister
+  productName: Fast Food VR
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -136,8 +136,10 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.1.0
-  preloadedAssets: []
+  bundleVersion: V1.0.0
+  preloadedAssets:
+  - {fileID: 2510553793122477150, guid: 7249c743841015e48bfe282eaab097dd, type: 2}
+  - {fileID: -5329181475235414705, guid: 2619ab041b7f0da448478dde53725b5d, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
