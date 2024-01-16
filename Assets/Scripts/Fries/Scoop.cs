@@ -9,7 +9,11 @@ public class Scoop : MonoBehaviour
 
     private bool filled;
 
+    [SerializeField]
+    private bool grabbed;
+
     public bool Filled { get => filled; private set => filled = value; }
+
 
     public void SetScoop()
     {
@@ -19,9 +23,19 @@ public class Scoop : MonoBehaviour
         AudioManager.Instance.PlaySFX("Fry", true);
     }
 
+    public void SetGrabbedOn()
+    {
+        grabbed = true;
+    }
+
+    public void SetGrabbedOff()
+    {
+        grabbed = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "FryBox" && filled)
+        if(other.tag == "FryBox" && filled && grabbed)
         {
             FryBox box = other.transform.parent.GetComponent<FryBox>();
 

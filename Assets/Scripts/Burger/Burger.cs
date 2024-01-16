@@ -19,6 +19,8 @@ public class Burger : MonoBehaviour
     [SerializeField]
     private int bunAmount;
 
+    private TopBunCheck topBunCheck;
+
     public int PattyAmount { get => pattyAmount; private set => pattyAmount = value; }
     public int LettuceAmount { get => lettuceAmount; private set => lettuceAmount = value; }
     public int CheeseAmount { get => cheeseAmount; private set => cheeseAmount = value; }
@@ -26,6 +28,7 @@ public class Burger : MonoBehaviour
     public int GreenCandyAmount { get => greenCandyAmount; private set => greenCandyAmount = value; }
     public int BlueRingAmount { get => blueRingAmount; private set => blueRingAmount = value; }
     public int BunAmount { get => bunAmount; private set => bunAmount = value; }
+    public TopBunCheck TopBunCheck { get => topBunCheck; private set => topBunCheck = value; }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -61,6 +64,7 @@ public class Burger : MonoBehaviour
                     break;
                 case Ingredient.IngredientType.BUN:
                     bunAmount++;
+                    if(bunAmount == 1) topBunCheck = other.transform.GetChild(0).GetComponent<TopBunCheck>();
                     break;
             }
         }
@@ -100,6 +104,7 @@ public class Burger : MonoBehaviour
                     break;
                 case Ingredient.IngredientType.BUN:
                     bunAmount--;
+                    if (bunAmount == 1) topBunCheck = other.transform.GetChild(0).GetComponent<TopBunCheck>();
                     break;
             }
         }

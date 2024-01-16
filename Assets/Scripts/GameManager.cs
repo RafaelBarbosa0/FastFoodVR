@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     private XROrigin origin;
     [SerializeField]
     private Transform spawnPosition;
-    [SerializeField]
-    private GameObject sizeIndicator;
 
     [SerializeField]
     private int maxLives;
@@ -186,6 +184,8 @@ public class GameManager : MonoBehaviour
             return false;
         }
 
+        if (burger.TopBunCheck.IngredientAmount > 0) return false;
+
         // If passed checks order is correct.
         return true;
     }
@@ -221,8 +221,6 @@ public class GameManager : MonoBehaviour
         uiRay.SetActive(false);
 
         origin.MoveCameraToWorldLocation(startPosition.position);
-
-        sizeIndicator.SetActive(false);
 
         // Start music.
         AudioManager.Instance.PlayMusic("MainTheme");
