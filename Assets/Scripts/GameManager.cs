@@ -4,6 +4,7 @@ using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour
 {
@@ -73,6 +74,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Transform playerPosition;
 
+
     public bool GameStarted { get => gameStarted; private set => gameStarted = value; }
 
     private void Start()
@@ -82,7 +84,7 @@ public class GameManager : MonoBehaviour
 
         lives = maxLives;
 
-        origin.MoveCameraToWorldLocation(spawnPosition.position);
+        playerPosition.position = spawnPosition.position;
     }
 
     private void Update()
@@ -219,7 +221,7 @@ public class GameManager : MonoBehaviour
         startCanvas.SetActive(false);
         uiRay.SetActive(false);
 
-        origin.MoveCameraToWorldLocation(startPosition.position);
+        playerPosition.position = startPosition.position;
 
         // Start music.
         AudioManager.Instance.PlayMusic("MainTheme");
@@ -244,7 +246,7 @@ public class GameManager : MonoBehaviour
     private void EndGame()
     {
         // Move player to end position.
-        origin.MoveCameraToWorldLocation(endPosition.position);
+        playerPosition.position = endPosition.position;
 
         // Enable and disable necessary elements.
         anchors.SetActive(false);
